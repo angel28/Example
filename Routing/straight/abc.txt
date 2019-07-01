@@ -1,0 +1,61 @@
+{
+    "policyAction": {
+        "id": "7025452a-83c7-4a58-909e-54f8a564ed8f",
+        "names": [
+            {
+                "value": "Identify & Authorize Application",
+                "locale": "en"
+            }
+        ],
+        "templateKey": "evaluatePolicy",
+        "parameters": [
+            {
+                "templateKey": "logicalConnector",
+                "values": [
+                    "OR"
+                ]
+            },
+            {
+                "templateKey": "allowAnonymous",
+                "values": [
+                    "false"
+                ]
+            },
+            {
+                "templateKey": "IdentificationRule",
+                "parameters": [
+                    {
+                        "templateKey": "applicationLookup",
+                        "values": [
+                            "strict"
+                        ]
+                    },
+                    {
+                        "templateKey": "identificationType",
+                        "values": [
+                            "apiKey"
+                        ]
+                    }
+                ]
+            },
+            {
+                "templateKey": "IdentificationRule",
+                "parameters": [
+                    {
+                        "templateKey": "applicationLookup",
+                        "values": [
+                            "strict"
+                        ]
+                    },
+                    {
+                        "templateKey": "identificationType",
+                        "values": [
+                            "httpBasicAuth"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "active": false
+    }
+}
